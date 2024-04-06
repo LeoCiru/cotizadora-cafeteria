@@ -2,12 +2,15 @@ import type { MenuItem } from "../types";
 
 type MenuItemProps = {
     item: MenuItem
+    agregarItem: (item: MenuItem) => void
 }
 
-function MenuItem({item}: MenuItemProps) {
+function MenuItem({item, agregarItem}: MenuItemProps) {
     return(
         <>
-          <button>
+          <button
+            onClick={() =>agregarItem(item)}
+          >
             <p>{item.name}</p>
             <span>${item.price}</span>
           </button>

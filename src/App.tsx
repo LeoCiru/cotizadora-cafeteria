@@ -1,9 +1,10 @@
 import MenuItem from "./components/MenuItem";
 import Factura from "./components/Factura";
 import { menuItems } from "./data/db";
+import useOrder from "./hooks/useOrder";
 
 function App() {
-
+  const { agregarItem, orden } = useOrder()
   return (
     <>
       <header>
@@ -18,12 +19,15 @@ function App() {
             <MenuItem
               key={item.id}
               item={item}
+              agregarItem={agregarItem}
             />
           ))}
         </div>
 
         <div className="factura">
-          <Factura/>
+          <Factura
+
+          />
         </div>
         
       </main>
