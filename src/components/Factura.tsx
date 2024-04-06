@@ -8,25 +8,30 @@ type FacturaProps = {
 function Factura({orden}: FacturaProps) {
     return (
         <>
-            <h2>Consumo</h2>
+            {orden.length > 0 ? (
+                <div className="contenedor-factura">
+                <h2>Consumo</h2>
+                    <div className="contenedor-items">
+                    {orden.map(itemAgregado => (
+                        <div 
+                            className="item-agregado"
+                            key={itemAgregado.id}
+                        >
+                            <div>
+                                <p>{itemAgregado.name} - {formatearMoneda(itemAgregado.price)}</p>
+                                <span>{itemAgregado.quantity} - {formatearMoneda(itemAgregado.price * itemAgregado.quantity)}</span>
+                            </div>
 
-            <div className="contenedor-factura">
-                {orden.map(itemAgregado => (
-                    <div 
-                        className="item-agregado"
-                        key={itemAgregado.id}
-                    >
-                        <div>
-                            <p>{itemAgregado.name} - {formatearMoneda(itemAgregado.price)}</p>
-                            <span>{itemAgregado.quantity} - {formatearMoneda(itemAgregado.price * itemAgregado.quantity)}</span>
+                            <button>
+                                X
+                            </button>
                         </div>
-
-                        <button>
-                            X
-                        </button>
+                    ))}
                     </div>
-                ))}
-            </div>
+                </div>
+            ) : (
+                <p>Agregar artículos</p>
+            )}
         </>
     )
 }

@@ -22,7 +22,8 @@ body .contenedor {
   width: 90%;
   margin: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  column-gap: 50px;
 }
 
 body .contenedor .menu {
@@ -32,7 +33,7 @@ body .contenedor .menu {
 
 body .contenedor .menu h2 {
   font-weight: 600;
-  margin: 10px 0;
+  margin: 30px 0 10px 0;
 }
 
 body .contenedor .menu button {
@@ -59,4 +60,58 @@ body .contenedor .menu button p {
 
 body .contenedor .menu button span {
   font-weight: 800;
+}
+
+body .contenedor .factura {
+  width: 50%;
+  margin: 10px 0;
+}
+
+body .contenedor .factura .contenedor-factura h2 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+body .contenedor .factura .contenedor-factura {
+  border: 2px dotted #cbc8c8ba;
+  padding: 20px;
+}
+
+body .contenedor .factura .contenedor-factura .item-agregado {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  padding: 20px;
+  border-bottom: 1px solid #cbc8c8ba;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  & p {
+    font-weight: 400;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  & span {
+    font-weight: 700;
+  }
+}
+
+body .contenedor .factura .contenedor-factura .contenedor-items {
+  border-top: 1px solid #cbc8c8ba;
+  border-bottom: 1px solid #cbc8c8ba;
+}
+
+body .contenedor .factura .contenedor-factura .item-agregado button {
+  background: none;
+  background-color: red;
+  padding: 0 20px;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.1rem;
 }
