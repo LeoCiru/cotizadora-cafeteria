@@ -1,11 +1,12 @@
-import { OrderItem } from "../types";
+import { MenuItem, OrderItem } from "../types";
 import { formatearMoneda } from "../helpers/formatearMoneda";
 
 type FacturaProps = {
     orden: OrderItem[]
+    eliminarItem: (id: MenuItem['id']) => void
 }
 
-function Factura({orden}: FacturaProps) {
+function Factura({orden, eliminarItem}: FacturaProps) {
     return (
         <>
             {orden.length > 0 ? (
@@ -22,7 +23,9 @@ function Factura({orden}: FacturaProps) {
                                 <span>{itemAgregado.quantity} - {formatearMoneda(itemAgregado.price * itemAgregado.quantity)}</span>
                             </div>
 
-                            <button>
+                            <button
+                                onClick={() => eliminarItem(itemAgregado.id)}
+                            >
                                 X
                             </button>
                         </div>

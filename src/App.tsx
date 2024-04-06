@@ -4,7 +4,7 @@ import { menuItems } from "./data/db";
 import useOrder from "./hooks/useOrder";
 
 function App() {
-  const { agregarItem, orden } = useOrder()
+  const { agregarItem, orden, eliminarItem } = useOrder()
   return (
     <>
       <header>
@@ -27,6 +27,7 @@ function App() {
         <div className="factura">
           <Factura
             orden={orden}
+            eliminarItem={eliminarItem}
           />
         </div>
         

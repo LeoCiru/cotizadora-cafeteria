@@ -17,9 +17,15 @@ function useOrder() {
         }
     }
 
+    function eliminarItem(id: MenuItem['id']) {
+        const itemEliminado = orden.filter(elementoEliminado => elementoEliminado.id != id);
+        setOrden(itemEliminado);
+    }
+
     return {
         agregarItem,
-        orden
+        orden,
+        eliminarItem
     }
 }
 
