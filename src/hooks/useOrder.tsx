@@ -3,6 +3,7 @@ import type { MenuItem, OrderItem } from "../types";
 
 function useOrder() {
     const [orden, setOrden] = useState<OrderItem[]>([])
+    const [propina, setPropina] = useState(0)
 
     function agregarItem(item: MenuItem) {
 
@@ -25,6 +26,8 @@ function useOrder() {
     return {
         agregarItem,
         orden,
+        propina,
+        setPropina,
         eliminarItem
     }
 }

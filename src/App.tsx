@@ -1,10 +1,10 @@
-import MenuItem from "./components/MenuItem";
-import Factura from "./components/Factura";
 import { menuItems } from "./data/db";
 import useOrder from "./hooks/useOrder";
+import Factura from "./components/Factura";
+import MenuItem from "./components/MenuItem";
 
 function App() {
-  const { agregarItem, orden, eliminarItem } = useOrder()
+  const { agregarItem, orden, propina, setPropina, eliminarItem } = useOrder()
   return (
     <>
       <header>
@@ -28,6 +28,8 @@ function App() {
           <Factura
             orden={orden}
             eliminarItem={eliminarItem}
+            setPropina={setPropina}
+            propina={propina}
           />
         </div>
         

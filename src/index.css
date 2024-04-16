@@ -124,3 +124,12 @@ body .contenedor .factura .contenedor-factura .item-agregado button {
   font-size: 1.1rem;
   height: 100%;
 }
+
+body .contenedor .factura .contenedor-factura form .opcion-propina {
+  margin: 5px 0;
+}
+
+body .contenedor .factura .contenedor-factura form .opcion-propina label {
+  cursor: pointer;
+  margin-right: 3px;
+}
