@@ -33,7 +33,7 @@ function Factura({orden, eliminarItem}: FacturaProps) {
                     </div>
                 </div>
             ) : (
-                <p>Agregar artículos</p>
+                <h2 className="sin-articulos">Agregar artículos</h2>
             )}
         </>
     )
