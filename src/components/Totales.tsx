@@ -1,30 +1,25 @@
-import { tipOptions } from "../data/db";
+import { useMemo } from "react";
+import { OrderItem } from "../types"
+import { formatearMoneda } from "../helpers/formatearMoneda";
 
 type TotalesProps = {
-    setPropina: React.Dispatch<React.SetStateAction<number>>
+  orden: OrderItem[],
+  propina: number
 }
 
+function Totales({orden, propina}: TotalesProps) {
+  const subtotal = useMemo(() => orden.reduce((total, actual) => total + (actual.price * actual.quantity), 0), [orden]);
+  const propinaMonto = useMemo(() => subtotal * propina, [subtotal, propina]);
+  const totalAPagar = useMemo(() => subtotal + propinaMonto, [subtotal, propinaMonto]);
+  
 
-function Totales({setPropina}: TotalesProps) {
   return (
     <>
-        <h2>Propina</h2>
+      <h2>Totales y Propinas</h2>
 
-        <form>
-            {tipOptions.map(opcion => (
-                <div key={opcion.id} className="opcion-propina">
-                    <label htmlFor={opcion.id}>{opcion.label}</label>
-
-                    <input
-                        type="radio"
-                        id={opcion.id}
-                        name="propina"
-                        value={opcion.value}
-                        onChange={e =>setPropina(+e.target.value)}
-                        />
-                </div>
-            ))}
-        </form>
+      <p><span>Subtotal a pagar: </span>{formatearMoneda(subtotal)}</p>
+      <p><span>Propina: </span>{formatearMoneda(propinaMonto)}</p>
+      <p><span>Total a pagar: </span>{formatearMoneda(totalAPagar)}</p>
     </>
   )
 }

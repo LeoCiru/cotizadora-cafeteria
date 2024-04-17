@@ -1,5 +1,6 @@
 import { MenuItem, OrderItem } from "../types";
 import { formatearMoneda } from "../helpers/formatearMoneda";
+import Propinas from "../components/Propinas";
 import Totales from "../components/Totales";
 
 type FacturaProps = {
@@ -35,8 +36,13 @@ function Factura({orden, eliminarItem, propina, setPropina}: FacturaProps) {
                     ))}
                     </div>
 
-                    <Totales
+                    <Propinas
                         setPropina={setPropina}
+                    />
+
+                    <Totales
+                        orden={orden}
+                        propina={propina}
                     />
                 </div>
 

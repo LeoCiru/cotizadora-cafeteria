@@ -4,7 +4,7 @@ import Factura from "./components/Factura";
 import MenuItem from "./components/MenuItem";
 
 function App() {
-  const { agregarItem, orden, propina, setPropina, eliminarItem } = useOrder()
+  const { agregarItem, orden, propina, setPropina, eliminarItem, calcularTotales } = useOrder()
   return (
     <>
       <header>
