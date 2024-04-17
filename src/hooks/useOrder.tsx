@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { MenuItem, OrderItem } from "../types";
+import { toast } from "sonner";
 
 function useOrder() {
     const [orden, setOrden] = useState<OrderItem[]>([])
@@ -23,12 +24,20 @@ function useOrder() {
         setOrden(itemEliminado);
     }
 
+    function enviarOrden() {
+        setOrden([]);
+        setPropina(0);
+
+        toast.success("¡Orden enviada!")
+    }
+
     return {
         agregarItem,
         orden,
         propina,
         setPropina,
-        eliminarItem
+        eliminarItem,
+        enviarOrden
     }
 }
 

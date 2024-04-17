@@ -2,17 +2,23 @@ import { MenuItem, OrderItem } from "../types";
 import { formatearMoneda } from "../helpers/formatearMoneda";
 import Propinas from "../components/Propinas";
 import Totales from "../components/Totales";
+import { Toaster } from "sonner";
 
 type FacturaProps = {
     orden: OrderItem[]
     eliminarItem: (id: MenuItem['id']) => void
     setPropina: React.Dispatch<React.SetStateAction<number>>
     propina: number
+    enviarOrden: () => void
 }
 
-function Factura({orden, eliminarItem, propina, setPropina}: FacturaProps) {
+function Factura({orden, eliminarItem, propina, setPropina, enviarOrden}: FacturaProps) {
     return (
         <>
+        <Toaster 
+            richColors
+            position="top-right"
+        />
             {orden.length > 0 ? (
                 <div className="contenedor-factura">
                     <h2>Consumo</h2>
@@ -43,16 +49,8 @@ function Factura({orden, eliminarItem, propina, setPropina}: FacturaProps) {
                     <Totales
                         orden={orden}
                         propina={propina}
+                        enviarOrden={enviarOrden}
                     />
-
-                    <form>
-                        <button
-                            type="submit"
-                            
-                        >
-                            GUARDAR ORDEN
-                        </button>
-                    </form>
                 </div>
 
             ) : (

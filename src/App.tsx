@@ -4,7 +4,7 @@ import Factura from "./components/Factura";
 import MenuItem from "./components/MenuItem";
 
 function App() {
-  const { agregarItem, orden, propina, setPropina, eliminarItem, calcularTotales } = useOrder()
+  const { agregarItem, orden, propina, setPropina, eliminarItem, enviarOrden } = useOrder()
   return (
     <>
       <header>
@@ -30,6 +30,7 @@ function App() {
             eliminarItem={eliminarItem}
             setPropina={setPropina}
             propina={propina}
+            enviarOrden={enviarOrden}
           />
         </div>
         

@@ -147,7 +147,7 @@ body .contenedor .factura .contenedor-factura p span {
   font-weight: 700;
 }
 
-body .contenedor .factura .contenedor-factura form button[type="submit"] {
+body .contenedor .factura .contenedor-factura .enviar-orden {
   background: none;
   width: 100%;
   border: none;
@@ -160,5 +160,10 @@ body .contenedor .factura .contenedor-factura form button[type="submit"] {
 
   &:hover {
     background-color: #3e3e3e;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: #6f6e6e;
   }
 }
