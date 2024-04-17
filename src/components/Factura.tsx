@@ -15,10 +15,18 @@ type FacturaProps = {
 function Factura({orden, eliminarItem, propina, setPropina, enviarOrden}: FacturaProps) {
     return (
         <>
-        <Toaster 
-            richColors
-            position="top-right"
-        />
+            <Toaster 
+                richColors
+                position="top-right"
+                closeButton
+                toastOptions={{
+                    style: {
+                        padding: "25px",
+                        fontSize: "1.1rem"
+                    }
+                    }
+                }
+            />
             {orden.length > 0 ? (
                 <div className="contenedor-factura">
                     <h2>Consumo</h2>
