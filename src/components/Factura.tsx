@@ -44,6 +44,15 @@ function Factura({orden, eliminarItem, propina, setPropina}: FacturaProps) {
                         orden={orden}
                         propina={propina}
                     />
+
+                    <form>
+                        <button
+                            type="submit"
+                            
+                        >
+                            GUARDAR ORDEN
+                        </button>
+                    </form>
                 </div>
 
             ) : (

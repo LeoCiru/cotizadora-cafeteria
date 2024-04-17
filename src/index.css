@@ -112,6 +112,10 @@ body .contenedor .factura .contenedor-factura .contenedor-items {
   border-bottom: 1px solid #cbc8c8ba;
 }
 
+body .contenedor .factura .contenedor-factura h2 {
+  margin-top: 15px;
+}
+
 body .contenedor .factura .contenedor-factura .item-agregado button {
   background: none;
   background-color: red;
@@ -132,4 +136,29 @@ body .contenedor .factura .contenedor-factura form .opcion-propina {
 body .contenedor .factura .contenedor-factura form .opcion-propina label {
   cursor: pointer;
   margin-right: 3px;
+}
+
+body .contenedor .factura .contenedor-factura p {
+  display: block;
+  margin: 10px 0;
+}
+
+body .contenedor .factura .contenedor-factura p span {
+  font-weight: 700;
+}
+
+body .contenedor .factura .contenedor-factura form button[type="submit"] {
+  background: none;
+  width: 100%;
+  border: none;
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #000;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #3e3e3e;
+  }
 }
